@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Helps the layout fit phone and tablet screens. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frame — Videos worth your time</title>
+
+    <!-- These files hold the styling and JavaScript separately from the HTML. -->
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- The header sits at the top and contains the site name and search bar. -->
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Frame home">
+        <span class="brand-mark" aria-hidden="true">F</span>
+        <span>frame</span>
+      </a>
+
+      <!-- This search bar is only a layout element for now. -->
+      <div class="search" role="search">
+        <label class="visually-hidden" for="video-search">Search videos</label>
+        <input
+          id="video-search"
+          type="search"
+          placeholder="Search videos"
+        />
+        <button type="button" aria-label="Search">
+          <span aria-hidden="true">⌕</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="page-layout">
+      <!-- Sidebar navigation links. They are placeholders for now. -->
+      <aside class="sidebar" aria-label="Main navigation">
+        <nav>
+          <a class="nav-link active" href="#" aria-current="page">
+            <span aria-hidden="true">⌂</span>
+            <span>Home</span>
+          </a>
+          <a class="nav-link" href="#">
+            <span aria-hidden="true">✦</span>
+            <span>Discover</span>
+          </a>
+          <a class="nav-link" href="#">
+            <span aria-hidden="true">▤</span>
+            <span>Following</span>
+          </a>
+          <a class="nav-link" href="#">
+            <span aria-hidden="true">◷</span>
+            <span>Watch later</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-note">
+          <p class="sidebar-heading">YOUR SPACE</p>
+          <p>Your saved videos and favorite creators will show up here.</p>
+        </div>
+      </aside>
+<!-- This section appears when someone opens a video card. -->
+<section class="video-viewer" aria-labelledby="viewer-title" hidden>
+  <button class="back-button" type="button">← Back to videos</button>
+
+  <div class="viewer-player-wrap">
+    <video class="viewer-player" controls preload="metadata">
+      <source
+        src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+        type="video/mp4"
+      />
+      Sorry, your browser cannot play this sample video.
+    </video>
+  </div>
+
+  <p class="eyebrow">SAMPLE CLIP</p>
+  <h2 class="viewer-title" id="viewer-title" tabindex="-1"></h2>
+  <p class="viewer-creator"></p>
+  <p class="viewer-description"></p>
+</section>
+      <!-- Main content holds the welcome message and video cards. -->
+      <main class="main-content">
+        <section class="welcome" aria-labelledby="welcome-title">
+          <p class="eyebrow">YOUR NEXT RABBIT HOLE</p>
+          <h1 id="welcome-title">Good things to watch.</h1>
+          <p>Thoughtful videos from people who love what they do.</p>
+        </section>
+
+        <section class="video-section" aria-labelledby="video-section-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">FRESH FINDS</p>
+              <h2 id="video-section-title">Picked for you</h2>
+            </div>
+            <span>6 videos</span>
+          </div>
+          <div class="category-filters" role="group" aria-label="Filter videos by category">
+  <button class="category-button active" type="button" data-category="all" aria-pressed="true">All</button>
+  <button class="category-button" type="button" data-category="gaming" aria-pressed="false">Gaming</button>
+  <button class="category-button" type="button" data-category="music" aria-pressed="false">Music</button>
+  <button class="category-button" type="button" data-category="education" aria-pressed="false">Education</button>
+  <button class="category-button" type="button" data-category="technology" aria-pressed="false">Technology</button>
+</div>
+          <!-- Each article is one video card in the responsive grid. -->
+          <div class="video-grid">
+            <article class="video-card">
+              <article
+  class="video-card"
+  data-category="music"
+  data-description="Take a breath, make a warm drink, and enjoy a gentle start to the day with music."
+  tabindex="0"
+  aria-label="Open video: A slower kind of morning"
+>
+              <img
+                class="thumbnail"
+                src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=85"
+                alt="A quiet mountain lake reflecting the surrounding peaks"
+              />
+              <div class="video-info">
+                <button class="like-button" type="button" aria-pressed="false" aria-label="Like this video">
+  <span class="like-icon" aria-hidden="true">♡</span>
+  <span class="like-count">128</span>
+  <span>likes</span>
+</button>
+                <h3>A slower kind of morning</h3>
+                <p class="creator">Maya Ellison</p>
+                <p class="video-meta">184K views</p>
+              </div>
+            </article>
+
+            <article class="video-card">
+              <article
+  class="video-card"
+  data-category="technology"
+  data-description="Enjoy learning about all kinds of technology that makes our world go round every day."
+  tabindex="0"
+  aria-label="Open video: A slower kind of morning"
+>
+              <img
+                class="thumbnail"
+                src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=800&q=85"
+                alt="A sunlit desk with a notebook and a cup of coffee"
+              />
+              <div class="video-info">
+                <button class="like-button" type="button" aria-pressed="false" aria-label="Like this video">
+  <span class="like-icon" aria-hidden="true">♡</span>
+  <span class="like-count">128</span>
+  <span>likes</span>
+</button>
+                <h3>Make a tiny journal with me</h3>
+                <p class="creator">Paper &amp; Pine</p>
+                <p class="video-meta">52K views</p>
+              </div>
+            </article>
+
+            <article class="video-card">
+              <article
+  class="video-card"
+  data-category="education"
+  data-description="Learn about the natural world and how to protect it with this short documentary."
+  tabindex="0"
+  aria-label="Open video: A slower kind of morning"
+>
+              <img
+                class="thumbnail"
+                src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=800&q=85"
+                alt="Soft waves rolling toward a sandy shore"
+              />
+              <div class="video-info">
+                <button class="like-button" type="button" aria-pressed="false" aria-label="Like this video">
+  <span class="like-icon" aria-hidden="true">♡</span>
+  <span class="like-count">128</span>
+  <span>likes</span>
+</button>
+                <h3>Listening to the edge of the sea</h3>
+                <p class="creator">Theo Outside</p>
+                <p class="video-meta">96K views</p>
+              </div>
+            </article>
+
+            <article class="video-card">
+              <article
+  class="video-card"
+  data-category="technology"
+  data-description="Learn how to make a simple, fun, and useful project with a Raspberry Pi computer."
+  tabindex="0"
+  aria-label="Open video: A slower kind of morning"
+>
+              <img
+                class="thumbnail"
+                src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=800&q=85"
+                alt="Golden light falling across a green hillside"
+              />
+              <div class="video-info">
+                <button class="like-button" type="button" aria-pressed="false" aria-label="Like this video">
+  <span class="like-icon" aria-hidden="true">♡</span>
+  <span class="like-count">128</span>
+  <span>likes</span>
+</button>
+                <h3>One afternoon, no plans</h3>
+                <p class="creator">Juniper Days</p>
+                <p class="video-meta">210K views</p>
+              </div>
+            </article>
+
+            <article class="video-card">
+              <article
+  class="video-card"
+  data-category="gaming"
+  data-description="Learn this fun interactive cooking game and make a delicious meal in your own kitchen."
+  tabindex="0"
+  aria-label="Open video: A slower kind of morning"
+>
+              <img
+                class="thumbnail"
+                src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=85"
+                alt="A colorful homemade meal arranged on a table"
+              />
+              <div class="video-info">
+                <button class="like-button" type="button" aria-pressed="false" aria-label="Like this video">
+  <span class="like-icon" aria-hidden="true">♡</span>
+  <span class="like-count">128</span>
+  <span>likes</span>
+</button>
+                <h3>Lunch from the market basket</h3>
+                <p class="creator">The Good Kitchen</p>
+                <p class="video-meta">73K views</p>
+              </div>
+            </article>
+
+            <article class="video-card">
+              <article
+  class="video-card"
+  data-category="gaming"
+  data-description="Walk through this enchanted forest and discover the secrets of an ancient realm in the newest game to hit the top 100."
+  tabindex="0"
+  aria-label="Open video: A slower kind of morning"
+>
+              <img
+                class="thumbnail"
+                src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=85"
+                alt="Sunlight filtering through a peaceful forest"
+              />
+              <div class="video-info">
+                <button class="like-button" type="button" aria-pressed="false" aria-label="Like this video">
+  <span class="like-icon" aria-hidden="true">♡</span>
+  <span class="like-count">128</span>
+  <span>likes</span>
+</button>
+                <h3>A walk through the old forest</h3>
+                <p class="creator">Field Notes Studio</p>
+                <p class="video-meta">129K views</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
